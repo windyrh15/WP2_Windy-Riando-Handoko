@@ -7,7 +7,7 @@ class Buku extends CI_Controller
     {
 
         parent::__construct();
-        // cek_login();
+        cek_login();
     }
     public function kategori()
     {
@@ -46,7 +46,8 @@ class Buku extends CI_Controller
     public function index()
     {
         $data['judul'] = 'Data Buku';
-        $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->ModelUser->cekData(['email' => $this->session->userdata('email')])
+            ->row_array();
         $data['buku'] = $this->ModelBuku->getBuku()->result_array();
         $data['kategori'] = $this->ModelBuku->getKategori()->result_array();
         $this->form_validation->set_rules('judul_buku', 'Judul Buku', 'required|min_length[3]', [
