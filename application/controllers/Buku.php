@@ -42,7 +42,7 @@ class Buku extends CI_Controller
         $this->ModelBuku->hapusKategori($where);
         redirect('buku/kategori');
     }
-    //manajemen Buku
+    //manajemen Bukuu
     public function index()
     {
         $data['judul'] = 'Data Buku';
